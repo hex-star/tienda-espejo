@@ -9,10 +9,11 @@ import AppAppBar from './modules/views/AppAppBar';
 import terms from './modules/views/terms.md';
 import AppFooter from './modules/views/AppFooter';
 
-function Terms() {
+function Terms(props) {
+  const { cartItemscount } = props;
   return (
     <React.Fragment>
-      <AppAppBar />
+      <AppAppBar cartItemsLenght={cartItemscount}  />
       <Container>
         <Box mt={7} mb={12}>
           <Typography variant="h3" gutterBottom marked="center" align="center">

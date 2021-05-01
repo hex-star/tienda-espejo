@@ -3,17 +3,18 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from "../components/AppBar";
+import { Tab, Tabs } from "@material-ui/core";
 import Toolbar, { styles as toolbarStyles } from "../components/Toolbar";
 import { Link } from "react-router-dom";
 import { Typography } from "@material-ui/core";
 import { IconButton } from "@material-ui/core";
 import { AccountCircle } from "@material-ui/icons";
 import { ShoppingBasket } from "@material-ui/icons";
-import AppTabBar from "./AppTabBar";
 import Popover from '@material-ui/core/Popover';
 import Button from '@material-ui/core/Button';
-import StyledBadge from '@material-ui/core/Badge';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import StyledBadge from "@material-ui/core/Badge";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import App from "../../Home";
 
 const styles = (theme) => ({
   title: {
@@ -45,8 +46,9 @@ const styles = (theme) => ({
   },
 });
 
+
 function AppAppBar(props) {
-  const { classes } = props;
+  const { classes, cartItemsCount } = props;
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -96,7 +98,7 @@ function AppAppBar(props) {
             </Link>
             <Link to={"/basket"}>
               <IconButton aria-label="cart">
-              <StyledBadge badgeContent={1} /*Jugar con props*/ color="secondary">
+              <StyledBadge badgeContent={cartItemsCount} /*Jugar con props*/ color="secondary">
                 <ShoppingCartIcon color="secondary" />
                 </StyledBadge>
                 <Typography
@@ -112,16 +114,26 @@ function AppAppBar(props) {
             </Link>
           </div>
         </Toolbar>
-        <AppTabBar />
+        <Tabs className={classes.toolbar} indicatorColor="primary"
+                  centered>
+              <Link to={"/"} className={classes.rightLink}>
+                <Tab label="Nosotros" ></Tab>
+              </Link>
+              <Link to={"/categories"} className={classes.rightLink}>
+                <Tab label="Nuestros productos" ></Tab>
+              </Link>
+              <Link to={"/terms"} className={classes.rightLink}>
+                <Tab label="Contacto" ></Tab>
+              </Link>
+            </Tabs>
       </AppBar>
-
       <div className={classes.placeholder} />
     </div>
   );
 }
 
 AppAppBar.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(AppAppBar);

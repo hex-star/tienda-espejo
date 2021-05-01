@@ -18,7 +18,8 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 
 const ProductCard = (props) =>{
-    const {avatarUrl, title, subtitle,description, imgSrc} = props;
+    const { product, onAdd } = props;
+    const { avatarUrl, title, subtitle,description, imgSrc } = product;
     return (
         <Card>
         <CardHeader
@@ -33,7 +34,7 @@ const ProductCard = (props) =>{
         title={title}
         subheader={subtitle}
       />
-      <CardMedia style={{height:"400px"}} image={imgSrc} />
+      <CardMedia style={{height:"250px"}} image={imgSrc} />
       <CardContent>
         <Typography variant="body2" component="p">
           {description}
@@ -46,7 +47,8 @@ const ProductCard = (props) =>{
          color="primary"
          spacing="1"
          endIcon={<ShoppingCartIcon />}
-        /*size="small"*/>COMPRAR</Button>
+         onClick={() => onAdd(product)}
+        /*size="small"*/>Agregar al carrito</Button>
         <IconButton aria-label="show more" size="small">
             <FavoriteIcon  color="secondary" />
         </IconButton>

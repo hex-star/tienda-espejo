@@ -6,17 +6,16 @@ import ProductCategories from "./modules/views/ProductCategories";
 import AppFooter from "./modules/views/AppFooter";
 import ProductHero from "./modules/views/ProductHero";
 import AppAppBar from "./modules/views/AppAppBar";
-import AppTabBar from "./modules/views/AppTabBar"
 import Terms from "./Terms";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
-import Basket from "./Basket"
+import BasketView from "./BasketView"
 
-function Categories() {
+function Categories(props) {
+  const { cartItemscount } = props;
   return (
     <React.Fragment>
-    <AppAppBar />
-    <AppTabBar />
+    <AppAppBar cartItemsLenght={cartItemscount}  />
     <ProductCategories />
     <AppFooter />
   </React.Fragment>
