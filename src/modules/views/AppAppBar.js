@@ -49,6 +49,7 @@ const styles = (theme) => ({
 
 function AppAppBar(props) {
   const { classes, cartItemsCount } = props;
+  console.log(cartItemsCount);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -114,7 +115,7 @@ function AppAppBar(props) {
             </Link>
           </div>
         </Toolbar>
-        <Tabs className={classes.toolbar} indicatorColor="primary"
+          <Tabs indicatorColor="primary"
                   centered>
               <Link to={"/"} className={classes.rightLink}>
                 <Tab label="Nosotros" ></Tab>
