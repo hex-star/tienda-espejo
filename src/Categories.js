@@ -12,10 +12,10 @@ import SignUp from "./SignUp";
 import BasketView from "./BasketView"
 
 function Categories(props) {
-  const { cartItemscount } = props;
+  const { cartItemsCount } = props;
   return (
     <React.Fragment>
-    <AppAppBar cartItemsLenght={cartItemscount}  />
+    <AppAppBar cartItemsCount={2}  />
     <ProductCategories />
     <AppFooter />
   </React.Fragment>

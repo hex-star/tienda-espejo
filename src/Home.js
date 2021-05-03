@@ -10,6 +10,7 @@ import ProductHero from "./modules/views/ProductHero";
 import Terms from "./Terms";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
+import CheckoutView from "./CheckoutView";
 import BasketView from "./BasketView";
 import Products from "./Products";
 import Categories from "./Categories";
@@ -49,7 +50,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Index cartItemsCount={cartItems.lenght} />
+          <Index cartItemsCount={cartItems.length} />
         </Route>
         <Route path="/signin">
           <SignIn />
@@ -58,16 +59,19 @@ function App() {
           <SignUp />
         </Route>
         <Route path="/terms">
-          <Terms cartItemsCount={cartItems.lenght} />
+          <Terms cartItemsCount={cartItems.length} />
         </Route>
         <Route path="/basket">
-          <BasketView products={products} onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}   />
+          <BasketView products={products} onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} />
         </Route>
         <Route path="/categories">
-          <Categories cartItemsCount={cartItems.lenght}  />
+          <Categories cartItemsCount={cartItems.length}  />
         </Route>
         <Route path="/products">
           <Products products={products} onAdd={onAdd} cartItems={cartItems} />
+        </Route>
+        <Route path="/checkout">
+          <CheckoutView />
         </Route>
       </Switch>
     </Router>
@@ -75,9 +79,10 @@ function App() {
 }
 
 function Index(props) {
+  const { cartItemsCount } = props;
   return (
     <React.Fragment>
-      <AppAppBar cartItemsLenght={props}  />
+      <AppAppBar cartItemsCount={cartItemsCount} />
       <ProductHero />
       <ProductHowItWorks />
       {/* <ProductCategories /> */}
