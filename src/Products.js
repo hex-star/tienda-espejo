@@ -14,9 +14,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 export default function Products(props) {
   const { products, onAdd, cartItems } = props;
 
+  const itemsCount = cartItems.reduce((a, c) => a + c.qty, 0);
+
+
   return (
     <React.Fragment>
-    <AppAppBar cartItemsLenght={cartItems.lenght}  />
+    <AppAppBar cartItemsCount={itemsCount}  />
     <Grid container direction = "column">
       <Grid item container>
         <Grid item xs={2} sm={2}/>

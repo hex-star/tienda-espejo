@@ -20,9 +20,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 export default function BasketView(props) {
   const { products, onAdd, onRemove, cartItems } = props;
 
+  const itemsCount = cartItems.reduce((a, c) => a + c.qty, 0);
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
   const taxPrice = itemsPrice * 0.21;
-  const shippingPrice = itemsPrice > 2000 ? 0 : 20;
+  const shippingPrice = itemsPrice > 2000 ? 0 : 800;
   const totalPrice = itemsPrice + taxPrice + shippingPrice;
 
   const styles = (theme) => ({
@@ -73,16 +74,17 @@ export default function BasketView(props) {
 
   return (
     <React.Fragment>
-    <AppAppBar cartItemsLenght={cartItems.lenght}  />
+    <AppAppBar cartItemsCount={itemsCount}  />
 
     <div className={styles.toolbar}>
-      <Typography variant="body1" marked="center" component="h2">
+      <Typography variant="h3" gutterBottom marked="center" align="center">
           Mi carrito
       </Typography>
-      <Grid container>
-        <Grid item xs={6} spacing={4}>
+      {cartItems.length === 0 && <Typography variant="h5" marked="center" align="center" >Tu carrito esta vacío!</Typography>}
+      <Grid container component="section">
+        <Grid item xs={2} spacing={1}></Grid>
+        <Grid item xs={4} spacing={1}>
             <Container>
-              {cartItems.length === 0 && <Typography variant="h5">No has seleccionado ningun producto</Typography>}
               {cartItems.length !== 0 && <Typography variant="h5">Tus productos:</Typography>
               }
               <Grid container xs={12} spacing={12}></Grid>
@@ -108,32 +110,33 @@ export default function BasketView(props) {
         
             </Container>  
         </Grid>
-        <Grid item xs={6} spacing={1}>
+        <Grid item xs={1} spacing={1}></Grid>
+        <Grid item xs={4} spacing={1}>
               {cartItems.length !== 0 && (
               <>
                 <Container align="center" className="row">
                   <hr></hr>
                   <Container className="row">
-                    <div className="col-2">Precio de los productos</div>
-                    <div className="col-1 text-right">${itemsPrice.toFixed(2)}</div>
+                  <Typography variant="body1">Precio de los productos</Typography>
+                  <Typography variant="body1">${itemsPrice.toFixed(2)}</Typography>
                   </Container>
                   <Container className="row">
-                    <div className="col-2">Impuestos</div>
+                  <Typography variant="body1">Impuestos</Typography>
                     <div className="col-1 text-right">${taxPrice.toFixed(2)}</div>
                   </Container>
                   <Container className="row">
-                    <div className="col-2">Costo de envío</div>
-                    <div className="col-1 text-right">
+                  <Typography variant="body1">Costo de envío</Typography>
+                  <Typography variant="body1">
                       ${shippingPrice.toFixed(2)}
-                    </div>
+                      </Typography>
                   </Container>
                   <Container className="row">
-                    <div className="col-2">
+                  <Typography variant="body1">
                       <strong>Precio final:</strong>
-                    </div>
-                    <div className="col-1 text-right">
+                      </Typography>
+                      <Typography variant="body1">
                       <strong>${totalPrice.toFixed(2)}</strong>
-                    </div>
+                      </Typography>
                   </Container>
                   <hr />
                   <Container className="row">
@@ -153,8 +156,6 @@ export default function BasketView(props) {
         </Grid>
       </Grid>
     </div>
-
-      
     <AppFooter />
   </React.Fragment>
   );
