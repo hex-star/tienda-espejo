@@ -134,7 +134,7 @@ export default function AppFooter() {
                 <Link to={"/terms"}>Contacto</Link>
               </li>
               <li className={classes.listItem}>
-                <Link to={"/admin"}>Ingreso Admin</Link>
+                <Link to={"/adminPanel"}>Ingreso Admin</Link>
               </li>
             </ul>
           </Grid>
