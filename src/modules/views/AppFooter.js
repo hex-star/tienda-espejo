@@ -10,8 +10,8 @@ function Copyright() {
   return (
     <React.Fragment>
       {'© '}
-      <Link color="inherit" href="https://localhost:3000">
-        Kucci
+      <Link underline='none' color="secondary" href="https://localhost:3000">
+        Kucci ❤
       </Link>{' '}
       {new Date().getFullYear()}
     </React.Fragment>
@@ -127,9 +127,9 @@ export default function AppFooter() {
               LINKS
             </Typography>
             <ul className={classes.list}>
-              <li className={classes.listItem}>
+              {/* <li className={classes.listItem}>
                 <Link to={"/terms"}>Terminos</Link>
-              </li>
+              </li> */}
               <li className={classes.listItem}>
                 <Link to={"/terms"}>Contacto</Link>
               </li>

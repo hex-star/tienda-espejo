@@ -74,9 +74,12 @@ export default function BasketView(props) {
   return (
     <React.Fragment>
     <AppAppBar cartItemsLenght={cartItems.lenght}  />
-
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
     <div className={styles.toolbar}>
-      <Typography variant="body1" marked="center" component="h2">
+      <Typography variant="h3" gutterBottom marked="center" align="center">
           Mi carrito
       </Typography>
       <Grid container>
