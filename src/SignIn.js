@@ -28,12 +28,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function SignIn() {
+function SignIn(props) {
   const classes = useStyles();
+  const { cartItemsCount } = props;
 
   return (
     <React.Fragment>
-      <AppAppBar />
+      <AppAppBar cartItemsCount={cartItemsCount} />
       <AppForm>
         <React.Fragment>
           <Typography variant="h3" gutterBottom marked="center" align="center">

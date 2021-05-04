@@ -48,7 +48,7 @@ const ProductCard = (props) =>{
          spacing="1"
          endIcon={<ShoppingCartIcon />}
          onClick={() => onAdd(product)}
-        /*size="small"*/>Agregar al carrito</Button>
+        size="small" >Agregar al carrito</Button>
         <IconButton aria-label="show more" size="small">
             <FavoriteIcon  color="secondary" />
         </IconButton>

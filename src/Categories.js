@@ -15,7 +15,7 @@ function Categories(props) {
   const { cartItemsCount } = props;
   return (
     <React.Fragment>
-    <AppAppBar cartItemsCount={2}  />
+    <AppAppBar cartItemsCount={cartItemsCount}  />
     <ProductCategories />
     <AppFooter />
   </React.Fragment>

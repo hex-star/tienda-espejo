@@ -10,10 +10,10 @@ import terms from './modules/views/terms.md';
 import AppFooter from './modules/views/AppFooter';
 
 function Terms(props) {
-  const { cartItemscount } = props;
+  const { cartItemsCount } = props;
   return (
     <React.Fragment>
-      <AppAppBar cartItemsLenght={cartItemscount}  />
+      <AppAppBar cartItemsCount={cartItemsCount}  />
       <Container>
         <Box mt={7} mb={12}>
           <Typography variant="h3" gutterBottom marked="center" align="center">
