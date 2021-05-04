@@ -75,7 +75,6 @@ export default function BasketView(props) {
   return (
     <React.Fragment>
     <AppAppBar cartItemsCount={itemsCount}  />
-
     <div className={styles.toolbar}>
       <Typography variant="h3" gutterBottom marked="center" align="center">
           Mi carrito

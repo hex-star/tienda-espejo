@@ -16,6 +16,7 @@ import Products from "./Products";
 import Categories from "./Categories";
 import ProductHowItWorks from "./modules/views/ProductHowItWorks";
 import ProductList from "./modules/components/ProductList"
+import Contact from "./Contact";
 
 function App() {
 
@@ -74,6 +75,9 @@ function App() {
         </Route>
         <Route path="/checkout" >
           <CheckoutView cartItems={cartItems} />
+        </Route>
+        <Route path="/contact">
+          <Contact cartItemsCount={cartItems.length} />
         </Route>
       </Switch>
     </Router>
