@@ -17,6 +17,7 @@ import Categories from "./Categories";
 import ProductHowItWorks from "./modules/views/ProductHowItWorks";
 import ProductList from "./modules/components/ProductList"
 import Contact from "./Contact";
+import Dashboard from './Dashboard.js';
 
 function App() {
 
@@ -78,6 +79,9 @@ function App() {
         </Route>
         <Route path="/contact">
           <Contact cartItemsCount={cartItems.length} />
+        </Route>
+        <Route path="/adminPanel">
+          <Dashboard cartItemsCount={cartItems.length} />
         </Route>
       </Switch>
     </Router>

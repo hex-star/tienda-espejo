@@ -1,0 +1,86 @@
+import React from "react";
+// import "./styles.css";
+import Orders from "./modules/components/Dashboard/Orders";
+// import Contact from "./Contact";
+// import About from "./About";
+import { Route, Switch } from "react-router-dom";
+import Drawer from "./modules/components/Dashboard/Drawer";
+import { makeStyles } from "@material-ui/core/styles";
+import Copyright from './modules/components/Dashboard/Coyright';
+import AppBar from '@material-ui/core/AppBar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import clsx from 'clsx';
+import Typography from '@material-ui/core/Typography';
+
+const useStyles = makeStyles({
+  container: {
+    display: "flex"
+  },
+  appBar: {
+    transition: theme.transitions.create(['margin', 'width'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    })},
+    appBarShift: {
+      width: `calc(100% - ${drawerWidth}px)`,
+      marginLeft: drawerWidth,
+      transition: theme.transitions.create(['margin', 'width'], {
+        easing: theme.transitions.easing.easeOut,
+        duration: theme.transitions.duration.enteringScreen,
+      }),
+    }
+
+});
+
+
+
+export default function Dashboard() {
+  const classes = useStyles();
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+  return (
+    <div className={classes.root}>
+    <CssBaseline />
+    <AppBar
+      position="fixed"
+      className={clsx(classes.appBar, {
+        [classes.appBarShift]: open,
+      })}
+    >
+      <Toolbar>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          onClick={handleDrawerOpen}
+          edge="start"
+          className={clsx(classes.menuButton, open && classes.hide)}
+        >
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h6" noWrap>
+          Persistent drawer
+        </Typography>
+      </Toolbar>
+    </AppBar>
+      <Drawer open={open} />
+      <Switch>
+        <Route exact from="/adminPanel/Orders" render={props => <Orders {...props} />} />
+        {/* <Route exact path="/contact" render={props => <Contact {...props} />} />
+        <Route exact path="/about" render={props => <About {...props} />} /> */}
+      </Switch>
+    
+    </div>
+    
+  );
+}
