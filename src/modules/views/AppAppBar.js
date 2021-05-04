@@ -123,7 +123,7 @@ function AppAppBar(props) {
               <Link to={"/categories"} className={classes.rightLink}>
                 <Tab label="Nuestros productos" ></Tab>
               </Link>
-              <Link to={"/terms"} className={classes.rightLink}>
+              <Link to={"/contact"} className={classes.rightLink}>
                 <Tab label="Contacto" ></Tab>
               </Link>
             </Tabs>

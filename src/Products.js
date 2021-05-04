@@ -21,7 +21,9 @@ export default function Products(props) {
       <Grid item container>
         <Grid item xs={2} sm={2}/>
         <Grid item xs={12} sm={8}>
-        
+        <br></br>
+        <br></br>
+        <br></br>
           {/* <Content /> */}
           <Grid container spacing = {2} >
               {ProductList.map(product => (
