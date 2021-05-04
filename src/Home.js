@@ -22,6 +22,8 @@ function App() {
 
     const { products } = ProductList;
     const [cartItems, setCartItems] = useState([]);
+    const itemsCount = cartItems.reduce((a, c) => a + c.qty, 0);
+
     const onAdd = (product) => {
       const exist = cartItems.find((x) => x.id === product.id);
       if (exist) {
@@ -51,28 +53,28 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Index cartItemsCount={cartItems.length} />
+          <Index cartItemsCount={itemsCount} />
         </Route>
         <Route path="/signin">
-          <SignIn />
+          <SignIn cartItemsCount={itemsCount} />
         </Route>
         <Route path="/signup">
           <SignUp />
         </Route>
         <Route path="/terms">
-          <Terms cartItemsCount={cartItems.length} />
+          <Terms cartItemsCount={itemsCount} />
         </Route>
         <Route path="/basket">
           <BasketView products={products} onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} />
         </Route>
         <Route path="/categories">
-          <Categories cartItemsCount={cartItems.length}  />
+          <Categories cartItemsCount={itemsCount} />
         </Route>
         <Route path="/products">
           <Products products={products} onAdd={onAdd} cartItems={cartItems} />
         </Route>
-        <Route path="/checkout">
-          <CheckoutView />
+        <Route path="/checkout" >
+          <CheckoutView cartItems={cartItems} />
         </Route>
         <Route path="/contact">
           <Contact cartItemsCount={cartItems.length} />
@@ -89,7 +91,6 @@ function Index(props) {
       <AppAppBar cartItemsCount={cartItemsCount} />
       <ProductHero />
       <ProductHowItWorks />
-      {/* <ProductCategories /> */}
       <AppFooter />
     </React.Fragment>
   );
