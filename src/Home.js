@@ -23,6 +23,7 @@ function App() {
 
     const { products } = ProductList;
     const [cartItems, setCartItems] = useState([]);
+    const [category, setCategory] = useState([]);
     const itemsCount = cartItems.reduce((a, c) => a + c.qty, 0);
 
     const onAdd = (product) => {
@@ -49,6 +50,10 @@ function App() {
         );
       }
     };
+    
+    const handleCategory = (category) => {
+      setCategory(category);
+    };
 
   return (
     <Router>
@@ -69,19 +74,19 @@ function App() {
           <BasketView products={products} onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} />
         </Route>
         <Route path="/categories">
-          <Categories cartItemsCount={itemsCount} />
+          <Categories cartItemsCount={itemsCount} handleCategory={handleCategory} />
         </Route>
         <Route path="/products">
-          <Products products={products} onAdd={onAdd} cartItems={cartItems} />
+          <Products products={products} onAdd={onAdd} cartItems={cartItems} category={category} />
         </Route>
         <Route path="/checkout" >
           <CheckoutView cartItems={cartItems} />
         </Route>
         <Route path="/contact">
-          <Contact cartItemsCount={cartItems.length} />
+          <Contact cartItemsCount={itemsCount} />
         </Route>
         <Route path="/adminPanel">
-          <Dashboard cartItemsCount={cartItems.length} />
+          <Dashboard />
         </Route>
       </Switch>
     </Router>

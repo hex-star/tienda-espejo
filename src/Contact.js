@@ -65,10 +65,10 @@ const ColorButton = withStyles((theme) => ({
 
 
 function Contact(props) {
-  const { cartItemscount } = props;
+  const { cartItemsCount } = props;
   return (
     <React.Fragment>
-      <AppAppBar cartItemsLenght={cartItemscount}  />
+      <AppAppBar cartItemsCount={cartItemsCount}  />
       <AppForm>
         <React.Fragment>
         <Typography variant="h3" gutterBottom marked="center" align="center">

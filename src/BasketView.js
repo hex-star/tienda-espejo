@@ -94,7 +94,7 @@ export default function BasketView(props) {
                   </Grid>
                   <Grid item xs={11} spacing={2}>
                   
-                    <Typography variant="body1">{item.title}</Typography>
+                    <Typography variant="body1">{item.type} - {item.title}</Typography>
                     <Typography variant="body2">{item.qty} x ${item.price.toFixed(2)}</Typography>
                     <button
                       onClick={() => onRemove(item)} className="remove">

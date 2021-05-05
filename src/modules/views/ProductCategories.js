@@ -85,7 +85,7 @@ const styles = (theme) => ({
 });
 
 function ProductCategories(props) {
-  const { classes } = props;
+  const { classes, handleCategory } = props;
 
   const images = [
       {
@@ -121,7 +121,7 @@ function ProductCategories(props) {
       {
         url:
           "https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=400&q=80",
-        title: "Otros",
+        title: "Ver todos",
         width: "24%"
       }
     ];
@@ -144,7 +144,8 @@ function ProductCategories(props) {
               }}
             />
             <div className={classes.imageBackdrop} />
-            <Link to={"/products"} >
+            <Link to={"/products"} 
+            onClick={() => handleCategory(image.title)} >
             <div className={classes.imageButton}>
               <Typography
                 component="h3"
