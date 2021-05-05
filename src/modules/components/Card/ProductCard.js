@@ -19,7 +19,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 const ProductCard = (props) =>{
     const { product, onAdd } = props;
-    const { avatarUrl, title, subtitle,description, imgSrc } = product;
+    const { id , avatarUrl, title, subtitle,description, imgSrc, type } = product;
     return (
         <Card>
         <CardHeader
@@ -37,7 +37,7 @@ const ProductCard = (props) =>{
       <CardMedia style={{height:"250px"}} image={imgSrc} />
       <CardContent>
         <Typography variant="body2" component="p">
-          {description}
+          {description.substring(0,125)}
         </Typography>
       </CardContent>
       <CardActions spacing={10}>

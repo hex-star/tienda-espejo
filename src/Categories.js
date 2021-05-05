@@ -12,11 +12,11 @@ import SignUp from "./SignUp";
 import BasketView from "./BasketView"
 
 function Categories(props) {
-  const { cartItemsCount } = props;
+  const { cartItemsCount, handleCategory } = props;
   return (
     <React.Fragment>
     <AppAppBar cartItemsCount={cartItemsCount}  />
-    <ProductCategories />
+    <ProductCategories handleCategory={handleCategory} />
     <AppFooter />
   </React.Fragment>
   );

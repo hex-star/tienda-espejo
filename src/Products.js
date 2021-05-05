@@ -12,7 +12,7 @@ import BasketView from "./BasketView"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function Products(props) {
-  const { products, onAdd, cartItems } = props;
+  const { products, onAdd, cartItems, category } = props;
 
   const itemsCount = cartItems.reduce((a, c) => a + c.qty, 0);
 
@@ -24,16 +24,15 @@ export default function Products(props) {
       <Grid item container>
         <Grid item xs={2} sm={2}/>
         <Grid item xs={12} sm={8}>
-        <br></br>
-        <br></br>
-        <br></br>
           {/* <Content /> */}
           <Grid container spacing = {2} >
-              {ProductList.map(product => (
-                <Grid item xs={12} sm={4}>
-                    <ProductCard product={product} onAdd={onAdd} />
-                </Grid>
-              ))}
+              {ProductList.map(product => {
+                if ( (category === "Ver todos") || (product.type === category)){
+                  return (<Grid item xs={12} sm={4}>
+                      <ProductCard product={product} onAdd={onAdd} />
+                  </Grid>)
+                }
+              })}
           </Grid>
 
         </Grid>

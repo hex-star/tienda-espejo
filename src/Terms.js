@@ -13,7 +13,7 @@ function Terms(props) {
   const { cartItemsCount } = props;
   return (
     <React.Fragment>
-      <AppAppBar cartItemsCount={cartItemsCount}  />
+      <AppAppBar cartItemsCount={cartItemsCount} />
       <Container>
         <Box mt={7} mb={12}>
           <Typography variant="h3" gutterBottom marked="center" align="center">
