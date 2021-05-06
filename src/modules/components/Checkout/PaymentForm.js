@@ -41,7 +41,7 @@ export default function PaymentForm(props) {
             required
             id="expDate"
             label="Fecha de expiración"
-            helperText="En format MM/AA"
+            helperText="En formato MM/AA"
             fullWidth
             autoComplete="cc-exp"
             variant="standard"
@@ -62,7 +62,7 @@ export default function PaymentForm(props) {
         <Grid item xs={12}>
           <FormControlLabel
             control={<Checkbox color="secondary" name="saveCard" value="yes" />}
-            label="Remember credit card details for next time"
+            label="Recordar detalles de la tarjeta de credito para la próxima compra"
           />
         </Grid>
       </Grid>

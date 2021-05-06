@@ -66,13 +66,13 @@ function AppAppBar(props) {
     <div>
       <AppBar /*color="transparent"*/ position="fixed">
         <Toolbar className={classes.toolbar}>
-          <Link to={"/"}>
+          <Link style={{textDecoration: 'none'}} to={"/"}>
             <IconButton>
               <img style={{ width: 50, flex: 1 }} src="./Kucci.png" action />
             </IconButton>
           </Link>
           <div className={classes.left} />
-          <Link to={"/"}>
+          <Link style={{textDecoration: 'none'}} to={"/"}>
             <Typography
               variant="h1"
               underline="none"
@@ -83,7 +83,7 @@ function AppAppBar(props) {
             </Typography>
           </Link>
           <div className={classes.right}>
-            <Link to={"/signin"}>
+            <Link  style={{textDecoration: 'none'}} to={"/signin"}>
               <IconButton>
                 <AccountCircle color="secondary" />
                 <Typography
@@ -96,7 +96,7 @@ function AppAppBar(props) {
                 </Typography>
               </IconButton>
             </Link>
-            <Link to={"/basket"}>
+            <Link style={{textDecoration: 'none'}} to={"/basket"}>
               <IconButton aria-label="cart">
               <StyledBadge badgeContent={cartItemsCount} /*Jugar con props*/ color="secondary">
                 <ShoppingCartIcon color="secondary" />
@@ -116,13 +116,13 @@ function AppAppBar(props) {
         </Toolbar>
           <Tabs indicatorColor="primary" position="fixed"
                   centered >
-              <Link to={"/"} className={classes.rightLink}>
+              <Link style={{textDecoration: 'none'}} to={"/"} className={classes.rightLink}>
                 <Tab label="Nosotros" ></Tab>
               </Link>
-              <Link to={"/categories"} className={classes.rightLink}>
+              <Link style={{textDecoration: 'none'}} to={"/categories"} className={classes.rightLink}>
                 <Tab label="Nuestros productos" ></Tab>
               </Link>
-              <Link to={"/contact"} className={classes.rightLink}>
+              <Link style={{textDecoration: 'none'}} to={"/contact"} className={classes.rightLink}>
                 <Tab label="Contacto" ></Tab>
               </Link>
             </Tabs>

@@ -118,7 +118,7 @@ export default function Checkout(props) {
                 </Typography>
                 <Typography variant="subtitle1">
                   Tu pedido ha sido realizado exitosamente. Te hemos enviado por 
-                  mail la confirmación, y te avisaremos tan pronto sea despachado.
+                  mail la confirmación y te avisaremos tan pronto sea despachado.
                 </Typography>
               </React.Fragment>
             ) : (
@@ -127,7 +127,7 @@ export default function Checkout(props) {
                 <div className={classes.buttons}>
                   {activeStep !== 0 && (
                     <Button onClick={handleBack} className={classes.button}>
-                      Back
+                      Volver
                     </Button>
                   )}
 

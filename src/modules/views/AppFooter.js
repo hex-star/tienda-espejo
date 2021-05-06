@@ -10,7 +10,7 @@ function Copyright() {
   return (
     <React.Fragment>
       {'© '}
-      <Link underline='none' color="secondary" href="https://localhost:3000">
+      <Link to={'/'} style={{textDecoration: 'none'}} underline='none' color="secondary" href="">
         Kucci ❤
       </Link>{' '}
       {new Date().getFullYear()}
@@ -101,11 +101,11 @@ export default function AppFooter() {
             <Grid item>
               <Typography variant="caption">
                 {'Icons made by '}
-                <Link href="https://www.freepik.com" rel="sponsored" title="Freepik">
+                <Link style={{textDecoration: 'none'}} href="https://www.freepik.com" rel="sponsored" title="Freepik">
                   Freepik
                 </Link>
                 {' from '}
-                <Link href="https://www.flaticon.com" rel="sponsored" title="Flaticon">
+                <Link style={{textDecoration: 'none'}} href="https://www.flaticon.com" rel="sponsored" title="Flaticon">
                   www.flaticon.com
                 </Link>
                 {' is licensed by '}
@@ -114,6 +114,7 @@ export default function AppFooter() {
                   title="Creative Commons BY 3.0"
                   target="_blank"
                   rel="noopener noreferrer"
+                  style={{textDecoration: 'none'}}
                 >
                 CC 3.0 BY
               </Link>
@@ -131,10 +132,10 @@ export default function AppFooter() {
                 <Link to={"/terms"}>Terminos</Link>
               </li> */}
               <li className={classes.listItem}>
-                <Link to={"/terms"}>Contacto</Link>
+                <Link style={{textDecoration: 'none'}} to={"/contact"}>Contacto</Link>
               </li>
               <li className={classes.listItem}>
-                <Link to={"/adminPanel"}>Ingreso Admin</Link>
+                <Link style={{textDecoration: 'none'}} to={"/adminPanel"}>Ingreso Admin</Link>
               </li>
             </ul>
           </Grid>

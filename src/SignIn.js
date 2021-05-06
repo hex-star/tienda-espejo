@@ -38,12 +38,12 @@ function SignIn(props) {
       <AppForm>
         <React.Fragment>
           <Typography variant="h3" gutterBottom marked="center" align="center">
-            Sign In
+            Iniciar sesión
           </Typography>
           <Typography variant="body2" align="center">
-            {'Not a member yet? '}
-            <Link to={"/signup"} align="center" underline="always">
-              Sign Up here
+            {'No eres miembro todavía? '}
+            <Link style={{textDecoration: 'none'}} to={"/signup"} align="center" underline="always">
+              Registrate aquí
             </Link>
           </Typography>
         </React.Fragment>
@@ -55,12 +55,12 @@ function SignIn(props) {
             }}
             validationSchema={Yup.object().shape({
               email: Yup.string()
-                .email("Must be a valid email")
+                .email("Debe ser un mail válido")
                 .max(255)
-                .required("Email is required"),
+                .required("Email requerido"),
               password: Yup.string()
                 .max(255)
-                .required("Password is required"),
+                .required("Contraseña requerida"),
             })}
             onSubmit={async (values) => {
               try {
@@ -90,7 +90,7 @@ function SignIn(props) {
                   error={Boolean(touched.email && errors.email)}
                   fullWidth
                   helperText={touched.email && errors.email}
-                  label="Email Address"
+                  label="Email"
                   margin="normal"
                   name="email"
                   onBlur={handleBlur}
@@ -103,7 +103,7 @@ function SignIn(props) {
                   error={Boolean(touched.password && errors.password)}
                   fullWidth
                   helperText={touched.password && errors.password}
-                  label="Password"
+                  label="Contraseña"
                   margin="normal"
                   name="password"
                   onBlur={handleBlur}
@@ -121,13 +121,13 @@ function SignIn(props) {
                     type="submit"
                     variant="contained"
                   >
-                    Sign in now
+                    Ingresar
                   </Button>
                 </Box>
                 <Typography color="textSecondary" variant="body1">
-                  Don&apos;t have an account?{" "}
-                  <Link to={"signup"} variant="h6">
-                    Sign up
+                  No tienes una cuenta?{" "}
+                  <Link style={{textDecoration: 'none'}} to={"signup"} variant="h6">
+                    Registrarse
                   </Link>
                 </Typography>
               </form>
