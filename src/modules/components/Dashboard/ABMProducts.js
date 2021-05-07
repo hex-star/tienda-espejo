@@ -11,47 +11,49 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import Header from './Header';
+import ProductList from "../../../modules/components/ProductList";
 
 // Generate Order Data
 function createData(id, date, name, shipTo, paymentMethod, amount) {
   return { id, date, name, shipTo, paymentMethod, amount };
 }
 
-const rows = [
-  createData(
-    0,
-    '1',
-    'Cartera Prueba',
-    '100',
-    'VISA ⠀•••• 3719',
-    312.44,
-  ),
-  createData(
-    1,
-    '2',
-    'Bolso Milán',
-    '5',
-    'VISA ⠀•••• 2574',
-    866.99,
-  ),
-  createData(2, '3', 'Billetera Sevilla', '40', 'MC ⠀•••• 1253', 100.81),
-  createData(
-    3,
-    '4',
-    'Cartera Oslo',
-    '50',
-    'AMEX ⠀•••• 2000',
-    654.39,
-  ),
-  createData(
-    4,
-    '5',
-    'Bolso de mano Paris',
-    '10',
-    'VISA ⠀•••• 5919',
-    212.79,
-  ),
-];
+// const rows = [
+//   createData(
+//     0,
+//     '1',
+//     'Cartera Prueba',
+//     '100',
+//     'VISA ⠀•••• 3719',
+//     312.44,
+//   ),
+//   createData(
+//     1,
+//     '2',
+//     'Bolso Milán',
+//     '5',
+//     'VISA ⠀•••• 2574',
+//     866.99,
+//   ),
+//   createData(2, '3', 'Billetera Sevilla', '40', 'MC ⠀•••• 1253', 100.81),
+//   createData(
+//     3,
+//     '4',
+//     'Cartera Oslo',
+//     '50',
+//     'AMEX ⠀•••• 2000',
+//     654.39,
+//   ),
+//   createData(
+//     4,
+//     '5',
+//     'Bolso de mano Paris',
+//     '10',
+//     'VISA ⠀•••• 5919',
+//     212.79,
+//   ),
+// ];
 
 function preventDefault(event) {
   event.preventDefault();
@@ -64,6 +66,7 @@ export default function Orders() {
     <Grid container direction="column" spacing={3}>
     <Grid item justify="center" alignItems="center" direction="row">
       <h1>ABM PRODUCTOS</h1>
+
     </Grid>
     <Grid item direction="column">
         <Button variant="contained" color="primary">Agregar Producto</Button>
@@ -74,19 +77,19 @@ export default function Orders() {
             <TableCell>ID</TableCell>
             <TableCell>Producto</TableCell>
             <TableCell>Cantidad</TableCell>
-            <TableCell >Precio</TableCell>
+            <TableCell>Precio</TableCell>
             <TableCell>Editar</TableCell>
             <TableCell>Eliminar</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {ProductList.map((row) => (
             <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
-              <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
+              <TableCell>{row.id}</TableCell>
+              <TableCell>{row.title}</TableCell>
+              <TableCell>{row.qty}</TableCell>
               {/* <TableCell>{row.paymentMethod}</TableCell> */}
-              <TableCell>{`$${row.amount}`}</TableCell>
+              <TableCell>{`$${row.price}`}</TableCell>
               <TableCell>
                 <IconButton>
                   <CreateIcon color="primary" />
@@ -101,7 +104,6 @@ export default function Orders() {
             </TableRow>
           ))}
         </TableBody>
-        
       </Table>
       </Grid>
 

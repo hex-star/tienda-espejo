@@ -6,7 +6,8 @@ export default([
   description: "Bolso formato shopper de color negro. Estampado animal en el cuerpo. bolsillo en la parte delantera.",
   avatarUrl:"https://static.zara.net/photos///2020/W/1/1/p/6986/510/040/2/w/1280/6986510040_1_1_1.jpg?ts=1584361449600",
   imgSrc:"https://static.zara.net/photos///2020/W/1/1/p/6986/510/040/2/w/1280/6986510040_1_1_1.jpg?ts=1584361449600",
-  type: "Carteras"
+  type: "Carteras",
+  qty: 10
 },
 {
   id: '2',
@@ -15,7 +16,8 @@ export default([
   description: "Bolso formato shopper de piel de color verde, cuerpo de piel con estampado de cuadros y asas de mano.",
   avatarUrl:"https://static.zara.net/photos///2020/I/1/1/p/6054/610/030/2/w/1280/6054610030_1_1_1.jpg?ts=1606909559107",
   imgSrc:"https://static.zara.net/photos///2020/I/1/1/p/6054/610/030/2/w/1280/6054610030_1_1_1.jpg?ts=1606909559107",
-  type: "Carteras"
+  type: "Carteras",
+  qty: 50
 },
 {
   id: '3',
@@ -24,7 +26,8 @@ export default([
   description: "Bolso de mano color mostaza. Cuerpo aterciopelado e interior forrado con bolsillos.",
   avatarUrl:"https://static.zara.net/photos///2020/S/1/1/p/6114/610/124/3/w/1280/6114610124_1_1_1.jpg?ts=1605712471159",
   imgSrc:"https://static.zara.net/photos///2020/S/1/1/p/6114/610/124/3/w/1280/6114610124_1_1_1.jpg?ts=1605712471159",
-  type: "Carteras"
+  type: "Carteras",
+  qty: 70
 },
 {
   id: '4',
@@ -33,7 +36,8 @@ export default([
   description: "Bandolera de piel con cuerpo acolchado y detalles metalizados.",
   avatarUrl:"https://static.zara.net/photos///2021/W/1/1/p/6150/710/040/2/w/1280/6150710040_1_1_1.jpg?ts=1606735715670",
   imgSrc:"https://static.zara.net/photos///2021/W/1/1/p/6150/710/040/2/w/1280/6150710040_1_1_1.jpg?ts=1606735715670",
-  type: "Carteras"
+  type: "Carteras",
+  qty: 5
 },
 {
   id: '5',
@@ -42,7 +46,8 @@ export default([
   description: "Bolso formato mochila de piel color cuero. Cuerpo de piel trenzada con detalle metalizado en la solapa.",
   avatarUrl:"https://static.zara.net/photos///2020/S/1/1/p/6500/610/105/2/w/1900/6500610105_1_1_1.jpg?ts=1606398710019",
   imgSrc:"https://static.zara.net/photos///2020/S/1/1/p/6500/610/105/2/w/1900/6500610105_1_1_1.jpg?ts=1606398710019",
-  type: "Mochilas"
+  type: "Mochilas",
+  qty: 23
 },
 {
   id: '6',
@@ -51,7 +56,8 @@ export default([
   description: "Mochila negra simil cuero con estampado animal print con hombros ajustables y cierre mediante cremayera",
   avatarUrl:"https://static.zara.net/photos///2021/W/1/1/p/6092/510/004/2/w/1280/6092510004_6_1_1.jpg?ts=1615202375885",
   imgSrc:"https://static.zara.net/photos///2021/W/1/1/p/6092/510/004/2/w/1280/6092510004_6_1_1.jpg?ts=1615202375885",
-  type: "Mochilas"
+  type: "Mochilas",
+  qty: 80
 },
 {
   id: '7',
@@ -60,7 +66,8 @@ export default([
   description: "Billetera de cuero rectangular con espacio para 12 tarjetas",
   avatarUrl:"https://static.zara.net/photos///2021/V/0/1/p/1977/001/681/2/w/1280/1977001681_1_1_1.jpg?ts=1609169221462",
   imgSrc:"https://static.zara.net/photos///2021/V/0/1/p/1977/001/681/2/w/1280/1977001681_1_1_1.jpg?ts=1609169221462",
-  type: "Billeteras"
+  type: "Billeteras",
+  qty: 65
 },
 {
   id: '8',
@@ -69,7 +76,8 @@ export default([
   description: "Billetera mini de cuero rectangular con espacio para 6 tarjetas",
   avatarUrl:"https://static.zara.net/photos///2021/V/0/1/p/1977/002/707/2/w/1280/1977002707_1_1_1.jpg?ts=1609157132578",
   imgSrc:"https://static.zara.net/photos///2021/V/0/1/p/1977/002/707/2/w/1280/1977002707_1_1_1.jpg?ts=1609157132578",
-  type: "Billeteras"
+  type: "Billeteras",
+  qty: 50
 },
 {
   id: '9',
@@ -78,7 +86,8 @@ export default([
   description: "Llavero confeccionado en piel, detalle de medalla metálica con letra en relieve. Edicion limitada",
   avatarUrl:"https://static.zara.net/photos///2021/V/0/1/p/4736/004/756/5/w/1280/4736004756_1_1_1.jpg?ts=1611778843847",
   imgSrc:"https://static.zara.net/photos///2021/V/0/1/p/4736/004/756/5/w/1280/4736004756_1_1_1.jpg?ts=1611778843847",
-  type: "Accesorios"
+  type: "Accesorios",
+  qty: 32
 },
 {
   id: '10',
@@ -87,7 +96,8 @@ export default([
   description: "Pañuelo confeccionado con tejido en mezcla de lana. Acabado desflecado",
   avatarUrl:"https://static.zara.net/photos///2020/I/0/1/p/0653/255/710/2/w/1280/0653255710_1_1_1.jpg?ts=1602242218197",
   imgSrc:"https://static.zara.net/photos///2020/I/0/1/p/0653/255/710/2/w/1280/0653255710_1_1_1.jpg?ts=1602242218197",
-  type: "Accesorios"
+  type: "Accesorios",
+  qty: 90
 },
 {
   id: '11',
@@ -96,7 +106,8 @@ export default([
   description: "Sombrero bucket con cordon ajustable",
   avatarUrl:"https://static.zara.net/photos///2020/I/0/1/p/0653/201/614/2/w/1280/0653201614_1_1_1.jpg?ts=1593504977627",
   imgSrc:"https://static.zara.net/photos///2020/I/0/1/p/0653/201/614/2/w/1280/0653201614_1_1_1.jpg?ts=1593504977627",
-  type: "Accesorios"
+  type: "Accesorios",
+  qty: 50
 },
 {
   id: '12',
@@ -105,7 +116,8 @@ export default([
   description: "Body splash Applejuice 150 ML (5.0 FL. OZ). EAU DE TOILETTE Floral.",
   avatarUrl:"https://static.zara.net/photos///2021/V/2/1/p/0110/236/999/2/w/1280/0110236999_6_1_1.jpg?ts=1610961837228",
   imgSrc:"https://static.zara.net/photos///2021/V/2/1/p/0110/236/999/2/w/1280/0110236999_6_1_1.jpg?ts=1610961837228",
-  type: "Belleza"
+  type: "Belleza",
+  qty:30
 },
 {
   id: '13',
@@ -114,6 +126,7 @@ export default([
   description: "EAU DE PARFUM 100ML",
   avatarUrl:"https://static.zara.net/photos///2020/I/2/1/p/0037/380/999/2/w/1280/0037380999_1_1_1.jpg?ts=1607069951961",
   imgSrc:"https://static.zara.net/photos///2020/I/2/1/p/0037/380/999/2/w/1280/0037380999_1_1_1.jpg?ts=1607069951961",
-  type: "Belleza"
+  type: "Belleza",
+  qty:3
 }
 ]);

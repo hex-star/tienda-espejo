@@ -13,7 +13,7 @@ const styles = (theme) => ({
     [theme.breakpoints.up('sm')]: {
       height: '80vh',
       minHeight: 500,
-      maxHeight: 1300,
+      maxHeight: 1500,
     },
   },
   container: {

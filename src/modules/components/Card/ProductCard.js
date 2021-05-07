@@ -21,7 +21,7 @@ const ProductCard = (props) =>{
     const { product, onAdd } = props;
     const { id , avatarUrl, title, subtitle,description, imgSrc, type } = product;
     return (
-        <Card>
+        <Card style={{height:"100%"}}>
         <CardHeader
         avatar={
           <Avatar src={avatarUrl} />

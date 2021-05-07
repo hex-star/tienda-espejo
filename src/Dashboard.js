@@ -8,6 +8,7 @@ import Drawer from "./modules/components/Dashboard/Drawer";
 import { makeStyles } from "@material-ui/core/styles";
 import Home from './Home'
 import Orders from "./modules/components/Dashboard/Orders";
+import Header from "./modules/components/Dashboard/Header";
 
 const useStyles = makeStyles({
   container: {
@@ -20,6 +21,7 @@ export default function App() {
   return (
     <div className={classes.container}>
       <Drawer />
+
       <Switch>
         <Route exact from="/" render={props => <Home {...props} />} />
         <Route exact from="/adminPanel/AbmProductos" render={props => <AbmProductos {...props} />} />

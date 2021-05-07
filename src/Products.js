@@ -20,6 +20,7 @@ export default function Products(props) {
   return (
     <React.Fragment>
     <AppAppBar cartItemsCount={itemsCount}  />
+    <br></br> <br></br>
     <Grid container direction = "column">
       <Grid item container>
         <Grid item xs={2} sm={2}/>
@@ -41,7 +42,7 @@ export default function Products(props) {
         </Grid>  
       </Grid>
 
-
+    <br></br>
     <AppFooter />
   </React.Fragment>
   );

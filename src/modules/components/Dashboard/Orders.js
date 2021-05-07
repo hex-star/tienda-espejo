@@ -7,6 +7,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 // import Title from './Title';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 
 
 // Generate Order Data
@@ -16,7 +17,7 @@ function createData(id, date, name, shipTo, paymentMethod, amount) {
 
 const rows = [
   createData(
-    0,
+    1,
     '16 Mar, 2021',
     'Elvis Presley',
     'Tupelo, MS',
@@ -24,7 +25,7 @@ const rows = [
     312.44,
   ),
   createData(
-    1,
+    2,
     '16 Mar, 2021',
     'Paul McCartney',
     'London, UK',
@@ -65,21 +66,33 @@ export default function Orders() {
       <Table size="small">
         <TableHead>
           <TableRow>
+            <TableCell>N° Venta</TableCell>
             <TableCell>Fecha</TableCell>
             <TableCell>Cliente</TableCell>
             <TableCell>Enviar a</TableCell>
             <TableCell>Método de Pago</TableCell>
             <TableCell>Total Venta</TableCell>
+            <TableCell></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id}>
+              <TableCell>{row.id}</TableCell>
               <TableCell>{row.date}</TableCell>
               <TableCell>{row.name}</TableCell>
               <TableCell>{row.shipTo}</TableCell>
               <TableCell>{row.paymentMethod}</TableCell>
               <TableCell >{`$${row.amount}`}</TableCell>
+              <TableCell>
+              <Button
+                size="small"
+                variant="contained"
+                color="secondary"
+                >
+                Detalle
+              </Button>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
