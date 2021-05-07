@@ -12,14 +12,14 @@ import BasketView from "./BasketView"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function Products(props) {
-  const { products, onAdd, cartItems, category } = props;
+  const { products, onAdd, cartItems, category , email } = props;
 
   const itemsCount = cartItems.reduce((a, c) => a + c.qty, 0);
 
 
   return (
     <React.Fragment>
-    <AppAppBar cartItemsCount={itemsCount}  />
+    <AppAppBar cartItemsCount={itemsCount} email={email} />
     <br></br> <br></br>
     <Grid container direction = "column">
       <Grid item container>

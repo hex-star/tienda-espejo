@@ -30,9 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
 function SignIn(props) {
   const classes = useStyles();
-  const { cartItemsCount } = props;
-  let user = JSON.parse(localStorage.getItem('user-info'));
-  console.warn(user);
+  const { cartItemsCount, setLogin} = props;
   return (
     <React.Fragment>
       <AppAppBar cartItemsCount={cartItemsCount} />
@@ -62,19 +60,20 @@ function SignIn(props) {
               password: Yup.string()
                 .max(255)
                 .required("Contraseña requerida"),
-            })}
-            onSubmit={async (values) => {
-              try {
-                /*
-                await Auth.signIn(values.email, values.password);
-                userHasAuthenticated(true);
-                navigate("/app/account");
-                */
-                window.location.reload();
-              } catch (e) {
-                alert(e.message);
-              }
-            }}
+            })} 
+            onSubmit={(values) => {setLogin(values)}}
+            // onSubmit={async (values) => {
+            //   try {
+            //     /*
+            //     await Auth.signIn(values.email, values.password);
+            //     userHasAuthenticated(true);
+            //     navigate("/app/account");
+            //     */
+            //     window.location.reload();
+            //   } catch (e) {
+            //     alert(e.message);
+            //   }
+            // }}
           >
             {({
               errors,
@@ -82,6 +81,7 @@ function SignIn(props) {
               handleSubmit,
               handleChange,
               isSubmitting,
+              handleLoginChange,
               touched,
               values,
             }) => (
@@ -91,6 +91,7 @@ function SignIn(props) {
                   error={Boolean(touched.email && errors.email)}
                   fullWidth
                   helperText={touched.email && errors.email}
+                  id="email"
                   label="Email"
                   margin="normal"
                   name="email"
@@ -104,6 +105,7 @@ function SignIn(props) {
                   error={Boolean(touched.password && errors.password)}
                   fullWidth
                   helperText={touched.password && errors.password}
+                  id="password"
                   label="Contraseña"
                   margin="normal"
                   name="password"

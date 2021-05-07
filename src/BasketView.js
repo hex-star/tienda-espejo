@@ -18,7 +18,7 @@ import { Toolbar } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function BasketView(props) {
-  const { products, onAdd, onRemove, cartItems } = props;
+  const { products, onAdd, onRemove, cartItems, email} = props;
 
   const itemsCount = cartItems.reduce((a, c) => a + c.qty, 0);
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
@@ -74,7 +74,7 @@ export default function BasketView(props) {
 
   return (
     <React.Fragment>
-    <AppAppBar cartItemsCount={itemsCount}  />
+    <AppAppBar cartItemsCount={itemsCount} email={email} />
     <br></br> <br></br>
     <div className={styles.toolbar}>
       <Typography variant="h3" gutterBottom marked="center" align="center">

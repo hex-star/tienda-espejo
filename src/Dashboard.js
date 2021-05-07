@@ -27,7 +27,7 @@ export default function App() {
         <Route exact from="/adminPanel/AbmProductos" render={props => <AbmProductos {...props} />} />
         <Route exact from="/adminPanel/Ventas" render={
           props => <Orders {...props} />}/>
-        }
+        
         {/* <Route exact path="/adminPanel/ABMProductos" render={props => <Contact {...props} />} />
         <Route exact path="/adminPanel/Ventas" render={props => <About {...props} />} /> */}
       </Switch>

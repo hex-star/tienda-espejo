@@ -28,12 +28,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CheckoutView(props) {
-    const { cartItems } = props;
+    const { cartItems, email } = props;
     const classes = useStyles();
 
     return (
     <React.Fragment>
-      <AppAppBar />
+      <AppAppBar email={email} />
       <br></br> <br></br>
         <Typography variant="h3" gutterBottom marked="center" align="center">
           Checkout

@@ -47,8 +47,46 @@ const styles = (theme) => ({
 });
 
 
+function getLoginButton(classes,email) {
+
+  if (email==='' || email===undefined) {
+    return(
+      <Link style={{textDecoration: 'none'}} to={"/signin"}>
+      <IconButton>
+        <AccountCircle color="secondary" />
+        <Typography
+          color="inherit"
+          variant="h8"
+          underline="none"
+          className={classes.rightLink}
+        >
+         {"Sign In"}
+        
+        </Typography>
+      </IconButton>
+    </Link>
+    )} else {
+      return(
+      <IconButton>
+        <AccountCircle color="secondary" />
+        <Typography
+          color="inherit"
+          variant="h8"
+          underline="none"
+          className={classes.rightLink}
+        >
+        
+         {email.split('@')[0]}
+        
+        </Typography>
+      </IconButton>
+    )}
+  }
+
+
+
 function AppAppBar(props) {
-  const { classes, cartItemsCount } = props;
+  const { classes, cartItemsCount, email } = props;
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -83,19 +121,7 @@ function AppAppBar(props) {
             </Typography>
           </Link>
           <div className={classes.right}>
-            <Link  style={{textDecoration: 'none'}} to={"/signin"}>
-              <IconButton>
-                <AccountCircle color="secondary" />
-                <Typography
-                  color="inherit"
-                  variant="h8"
-                  underline="none"
-                  className={classes.rightLink}
-                >
-                  {"Sign In"}
-                </Typography>
-              </IconButton>
-            </Link>
+          {getLoginButton(classes,email)}
             <Link style={{textDecoration: 'none'}} to={"/basket"}>
               <IconButton aria-label="cart">
               <StyledBadge badgeContent={cartItemsCount} /*Jugar con props*/ color="secondary">

@@ -24,6 +24,7 @@ function App() {
     const { products } = ProductList;
     const [cartItems, setCartItems] = useState([]);
     const [category, setCategory] = useState([]);
+
     const itemsCount = cartItems.reduce((a, c) => a + c.qty, 0);
 
     const onAdd = (product) => {
@@ -54,36 +55,40 @@ function App() {
     const handleCategory = (category) => {
       setCategory(category);
     };
+    
+    const [login,setLogin] = React.useState({});
+
 
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Index cartItemsCount={itemsCount} />
+          <Index cartItemsCount={itemsCount} email={login.email} />
         </Route>
         <Route path="/signin">
-          <SignIn cartItemsCount={itemsCount} />
+          <SignIn cartItemsCount={itemsCount} 
+          setLogin={setLogin}  />
         </Route>
         <Route path="/signup">
           <SignUp />
         </Route>
         <Route path="/terms">
-          <Terms cartItemsCount={itemsCount} />
+          <Terms cartItemsCount={itemsCount} email={login.email}  />
         </Route>
         <Route path="/basket">
-          <BasketView products={products} onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} />
+          <BasketView products={products} onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} email={login.email} />
         </Route>
         <Route path="/categories">
-          <Categories cartItemsCount={itemsCount} handleCategory={handleCategory} />
+          <Categories cartItemsCount={itemsCount} handleCategory={handleCategory} email={login.email} />
         </Route>
         <Route path="/products">
-          <Products products={products} onAdd={onAdd} cartItems={cartItems} category={category} />
+          <Products products={products} onAdd={onAdd} cartItems={cartItems} category={category} email={login.email}  />
         </Route>
         <Route path="/checkout" >
-          <CheckoutView cartItems={cartItems} />
+          <CheckoutView cartItems={cartItems} email={login.email}  />
         </Route>
         <Route path="/contact">
-          <Contact cartItemsCount={itemsCount} />
+          <Contact cartItemsCount={itemsCount} email={login.email}  />
         </Route>
         <Route path="/adminPanel">
           <Dashboard />
@@ -94,10 +99,10 @@ function App() {
 }
 
 function Index(props) {
-  const { cartItemsCount } = props;
+  const { cartItemsCount, email } = props;
   return (
     <React.Fragment>
-      <AppAppBar cartItemsCount={cartItemsCount} />
+      <AppAppBar cartItemsCount={cartItemsCount} email={email} />
       <ProductHero />
       <ProductHowItWorks />
       <AppFooter />
