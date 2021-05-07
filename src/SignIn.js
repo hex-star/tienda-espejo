@@ -14,6 +14,7 @@ import AppAppBar from './modules/views/AppAppBar';
 import AppForm from './modules/views/AppForm';
 import * as Yup from "yup";
 import { Formik } from "formik";
+import {useHistory} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -28,7 +29,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 function SignIn(props) {
+  const history = useHistory();
   const classes = useStyles();
   const { cartItemsCount, setLogin} = props;
   return (
@@ -61,7 +65,11 @@ function SignIn(props) {
                 .max(255)
                 .required("Contraseña requerida"),
             })} 
-            onSubmit={(values) => {setLogin(values)}}
+            onSubmit={(values) => {
+              setLogin(values)
+              history.push('/')
+              //window.location.href = '/';
+              }}
             // onSubmit={async (values) => {
             //   try {
             //     /*
@@ -69,7 +77,7 @@ function SignIn(props) {
             //     userHasAuthenticated(true);
             //     navigate("/app/account");
             //     */
-            //     window.location.reload();
+            
             //   } catch (e) {
             //     alert(e.message);
             //   }
