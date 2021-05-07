@@ -34,6 +34,7 @@ export default function CheckoutView(props) {
     return (
     <React.Fragment>
       <AppAppBar />
+      <br></br> <br></br>
         <Typography variant="h3" gutterBottom marked="center" align="center">
           Checkout
         </Typography>

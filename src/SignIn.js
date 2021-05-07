@@ -31,7 +31,8 @@ const useStyles = makeStyles((theme) => ({
 function SignIn(props) {
   const classes = useStyles();
   const { cartItemsCount } = props;
-
+  let user = JSON.parse(localStorage.getItem('user-info'));
+  console.warn(user);
   return (
     <React.Fragment>
       <AppAppBar cartItemsCount={cartItemsCount} />
