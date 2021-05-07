@@ -107,7 +107,7 @@ function ProductValues(props) {
               </Typography>
               <Typography variant="h5">
                 {"Todos nuestros diseños"}
-                {"son exclusivos"}
+                {" son exclusivos"}
               </Typography>
             </div>
           </Grid>
