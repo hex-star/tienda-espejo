@@ -18,6 +18,7 @@ import ProductHowItWorks from "./modules/views/ProductHowItWorks";
 import ProductList from "./modules/components/ProductList"
 import Contact from "./Contact";
 import Dashboard from './Dashboard.js';
+import ProductValues from "./modules/views/ProductValues";
 
 function App() {
 
@@ -105,6 +106,7 @@ function Index(props) {
       <AppAppBar cartItemsCount={cartItemsCount} email={email} />
       <ProductHero />
       <ProductHowItWorks />
+      <ProductValues />
       <AppFooter />
     </React.Fragment>
   );
