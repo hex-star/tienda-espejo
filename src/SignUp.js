@@ -41,11 +41,11 @@ function SignUp() {
       <AppForm>
         <React.Fragment>
           <Typography variant="h3" gutterBottom marked="center" align="center">
-            Sign Up
+            Registrarse
           </Typography>
           <Typography variant="body2" align="center">
-            <Link to={"/signin"} underline="always">
-              Already have an account?
+            <Link style={{textDecoration: 'none'}} to={"/signin"} underline="always">
+              Ya tienes una cuenta?
             </Link>
           </Typography>
         </React.Fragment>
@@ -59,19 +59,19 @@ function SignUp() {
               }}
               validationSchema={Yup.object().shape({
                 email: Yup.string()
-                  .email("Must be a valid email")
+                  .email("Debe ser un email válido")
                   .max(255)
-                  .required("Email is required"),
+                  .required("Email requerido"),
                 password: Yup.string()
                   .max(255)
-                  .required("a password with a minimum length of 8 characters, lowercase, uppercase, and numbers is required"),
+                  .required("Contraseña con longitud mínima de 8 carácteres. Son requeridos minúsculas, mayúsculas y númberos."),
                 confirmpassword: Yup.string().oneOf(
                   [Yup.ref("password"), null],
-                  "Passwords must match"
+                  "Las contraseñas deben coincidir"
                 ),
                 policy: Yup.boolean().oneOf(
                   [true],
-                  "This field must be checked"
+                  "Debe leer y aceptar nuestros términos y condiciones"
                 ),
               })}
               onSubmit={async (values) => {
@@ -104,7 +104,7 @@ function SignUp() {
                     error={Boolean(touched.email && errors.email)}
                     fullWidth
                     helperText={touched.email && errors.email}
-                    label="Email Address"
+                    label="Email"
                     margin="normal"
                     name="email"
                     onBlur={handleBlur}
@@ -117,7 +117,7 @@ function SignUp() {
                     error={Boolean(touched.password && errors.password)}
                     fullWidth
                     helperText={touched.password && errors.password}
-                    label="Password"
+                    label="Contraseña"
                     margin="normal"
                     name="password"
                     onBlur={handleBlur}
@@ -134,7 +134,7 @@ function SignUp() {
                     helperText={
                       touched.confirmpassword && errors.confirmpassword
                     }
-                    label="Confirm Password"
+                    label="Confirmar Contraseña"
                     margin="normal"
                     name="confirmpassword"
                     onBlur={handleBlur}
@@ -150,8 +150,8 @@ function SignUp() {
                       onChange={handleChange}
                     />
                     <Typography color="textSecondary" variant="body1">
-                      I have read the{" "}
-                        <a target="_blank" rel="noopener noreferrer" href={" "}>Terms and Conditions</a>
+                      He leído{" "}
+                        <a target="_blank" rel="noopener noreferrer" href={"/terms"}>Términos y Condiciones</a>
                     </Typography>
                   </Box>
                   {Boolean(touched.policy && errors.policy) && (
@@ -166,13 +166,13 @@ function SignUp() {
                       type="submit"
                       variant="contained"
                     >
-                      Sign up now
+                      Registrarse
                     </Button>
                   </Box>
                   <Typography color="textSecondary" variant="body1">
-                    Have an account?{" "}
-                    <Link to={'/signin'} variant="h6">
-                      Sign in
+                    Tienes una cuenta?{" "}
+                    <Link style={{textDecoration: 'none'}} to={'/signin'} variant="h6">
+                      Iniciar sesión
                     </Link>
                   </Typography>
                 </form>

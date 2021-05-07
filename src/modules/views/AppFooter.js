@@ -135,6 +135,9 @@ export default function AppFooter() {
                 <Link style={{textDecoration: 'none'}} to={"/contact"}>Contacto</Link>
               </li>
               <li className={classes.listItem}>
+                <Link style={{textDecoration: 'none'}} to={"/terms"}>Términos</Link>
+              </li>
+              <li className={classes.listItem}>
                 <Link style={{textDecoration: 'none'}} to={"/adminPanel"}>Ingreso Admin</Link>
               </li>
             </ul>
